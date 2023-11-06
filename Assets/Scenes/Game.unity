@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42084d80b3bcd8479073a15de57f1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyOnePrefab: {fileID: 0}
-  enemyTwoPrefab: {fileID: 0}
+  enemyOnePrefab: {fileID: 8987987437196827332, guid: ea40c61bf0face44ca3fbc07bce5dea7, type: 3}
+  enemyTwoPrefab: {fileID: 9105137723267010060, guid: 4085db163ba006b4c8043134a5b39846, type: 3}
   enemyThreePrefab: {fileID: 6750058129080929515, guid: 82dbb428fbee5e742ad1fe777723bad8, type: 3}
 --- !u!4 &63214384
 Transform:
