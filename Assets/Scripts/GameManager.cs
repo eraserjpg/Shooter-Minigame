@@ -32,6 +32,6 @@ public class GameManager : MonoBehaviour
     }
     void CreateEnemyThree()
     {
-        Instantiate(enemyThreePrefab, new Vector3(Random.Range(6, 8), 7, 0), Quaternion.identity);
+        Instantiate(enemyThreePrefab, new Vector3(Random.Range(3, 8), 7, 0), Quaternion.identity);
     }
 }
