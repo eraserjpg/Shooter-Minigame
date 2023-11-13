@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemyOnePrefab;
     public GameObject cloudPrefab;
     public GameObject powerUp_HealthPrefab;
+    public GameObject CoinPrefab;
     public int score;
     public int cloudsMove;
     public TextMeshProUGUI scoreText;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
         Instantiate(playerPrefab, transform.position, Quaternion.identity);
         CreateSky();
         InvokeRepeating("SpawnEnemyOne", 1f, 2f);
+        InvokeRepeating("CreateCoin", 1f, 10f);
         Instantiate(powerUp_HealthPrefab, transform.position = new Vector3(-15, 0, 0), Quaternion.identity);
         cloudsMove = 1;
         score = 0;
@@ -47,6 +49,12 @@ public class GameManager : MonoBehaviour
             Instantiate(cloudPrefab, new Vector3(Random.Range(-11f, 11f), Random.Range(-7.5f, 7.5f), 0), Quaternion.identity);
         }
     }
+
+    void CreateCoin()
+    {
+        Instantiate(CoinPrefab, new Vector3(Random.Range(-8, 8), 7, 0), Quaternion.identity);
+    }
+
 
     public void GameOver()
     {
