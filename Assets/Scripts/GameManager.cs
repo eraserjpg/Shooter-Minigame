@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         cloudsMove = 0;
     }
 
+   
     public void EarnScore(int scoreToAdd)
     {
         score = score + scoreToAdd;

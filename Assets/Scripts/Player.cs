@@ -10,12 +10,16 @@ public class Player : MonoBehaviour
     private float horizontalScreenLimit = 10f;
     private float verticalScreenLimit = 4f;
     public int lives;
+    public TMPro.TextMeshProUGUI livesText;
+
 
     // Start is called before the first frame update
     void Start()
     {
         playerSpeed = 6f;
         lives = 3;
+        livesText = GameObject.Find("GameManager").GetComponent<GameManager>().livesText;
+        livesText.text = "Lives: " + lives;
     }
 
     // Update is called once per frame
