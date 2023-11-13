@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject enemyOnePrefab;
     public GameObject cloudPrefab;
+    public GameObject CoinPrefab;
     public int score;
     public int cloudsMove;
     public TextMeshProUGUI scoreText;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         Instantiate(playerPrefab, transform.position, Quaternion.identity);
         CreateSky();
         InvokeRepeating("SpawnEnemyOne", 1f, 2f);
+        InvokeRepeating("CreateCoin", 1f, 10f);
         cloudsMove = 1;
         score = 0;
         scoreText.text = "Score: " + score;
@@ -44,7 +46,10 @@ public class GameManager : MonoBehaviour
             Instantiate(cloudPrefab, new Vector3(Random.Range(-11f, 11f), Random.Range(-7.5f, 7.5f), 0), Quaternion.identity);
         }
     }
-
+    void CreateCoin()
+    {
+        Instantiate(CoinPrefab, new Vector3(Random.Range(-8, 8), 7, 0), Quaternion.identity);
+    }
     public void GameOver()
     {
         CancelInvoke();
