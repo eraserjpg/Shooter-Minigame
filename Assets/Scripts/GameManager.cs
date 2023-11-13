@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject enemyOnePrefab;
     public GameObject cloudPrefab;
+    public GameObject powerUp_HealthPrefab;
     public int score;
     public int cloudsMove;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI livesText;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
         Instantiate(playerPrefab, transform.position, Quaternion.identity);
         CreateSky();
         InvokeRepeating("SpawnEnemyOne", 1f, 2f);
+        Instantiate(powerUp_HealthPrefab, transform.position = new Vector3(-15, 0, 0), Quaternion.identity);
         cloudsMove = 1;
         score = 0;
         scoreText.text = "Score: " + score;
@@ -31,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
 
     }
-
+    
     void SpawnEnemyOne()
     {
         Instantiate(enemyOnePrefab, new Vector3(Random.Range(-8, 8), 7.5f, 0), Quaternion.Euler(0, 0, 180));

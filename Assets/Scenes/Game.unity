@@ -290,6 +290,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 6820449055335339510, guid: 2e3c29c19291ae445a3efd11c33faa1b, type: 3}
   enemyOnePrefab: {fileID: 5703833363537405558, guid: ea40c61bf0face44ca3fbc07bce5dea7, type: 3}
   cloudPrefab: {fileID: 3029120386124416172, guid: a1f154c45235ce6499c16c91ad8ebe0f, type: 3}
+  powerUp_HealthPrefab: {fileID: 1040517107878263591, guid: 7b789373893407949baed7cfddf6f678, type: 3}
   score: 0
   cloudsMove: 0
   scoreText: {fileID: 87585811}
