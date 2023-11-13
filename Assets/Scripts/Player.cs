@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
     public void LoseLife()
     {
         lives--;
+        livesText.text = "Lives: " + lives;
         //lives -= 1;
         //lives = lives - 1;
         if (lives <= 0)
