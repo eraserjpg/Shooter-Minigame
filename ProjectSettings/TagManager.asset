@@ -4,12 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PowerUp_Health
+  - Weapon
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
   - 
