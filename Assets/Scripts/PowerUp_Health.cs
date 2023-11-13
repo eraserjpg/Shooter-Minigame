@@ -16,14 +16,10 @@ public class PowerUp_Health : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Pickup();
+            Debug.Log("Power up picked up!");
+            other.GetComponent<Player>().GainLife();
         }
     }
-
-    void Pickup()
-    {
-        Debug.Log ("Power up picked up!");
-    }
-
 }
+
 
