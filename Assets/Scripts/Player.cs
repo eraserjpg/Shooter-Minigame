@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         if (lives <= 0)
         {
             //Game Over
-            GameObject.Find("GameManager").GetComponent().GameOver();
+            GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }

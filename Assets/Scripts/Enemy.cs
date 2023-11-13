@@ -23,13 +23,13 @@ public class Enemy : MonoBehaviour
     {
         if (whatIHit.tag == "Player")
         {
-            whatIHit.GetComponent().LoseLife();
+            whatIHit.GetComponent<Player>().LoseLife();
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
         else if (whatIHit.tag == "Weapon")
         {
-            GameObject.Find("GameManager").GetComponent().EarnScore(2);
+            GameObject.Find("GameManager").GetComponent<GameManager>().EarnScore(2);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(whatIHit.gameObject);
             Destroy(this.gameObject);
