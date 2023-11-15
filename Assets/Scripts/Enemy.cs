@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     {
         if (whatIHit.tag == "Player")
         {
-            whatIHit.GetComponent<Player>().LoseLife();
+            whatIHit.GetComponent<Player>().LoseShield();
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }

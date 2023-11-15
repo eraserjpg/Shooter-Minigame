@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
     public GameObject enemyOnePrefab;
     public GameObject cloudPrefab;
     public GameObject powerUp_HealthPrefab;
+    public GameObject powerUp_ShieldPrefab;
     public GameObject CoinPrefab;
     public int score;
     public int cloudsMove;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI livesText;
+    public TextMeshProUGUI shieldText;
    
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("SpawnEnemyOne", 1f, 2f);
         InvokeRepeating("CreateCoin", 1f, 10f);
         Instantiate(powerUp_HealthPrefab, transform.position = new Vector3(-15, 0, 0), Quaternion.identity);
+        Instantiate(powerUp_ShieldPrefab, transform.position = new Vector3(25, 0, 0), Quaternion.identity);
         cloudsMove = 1;
         score = 0;
         scoreText.text = "Score: " + score;

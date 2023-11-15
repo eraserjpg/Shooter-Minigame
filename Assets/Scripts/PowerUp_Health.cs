@@ -16,7 +16,7 @@ public class PowerUp_Health : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Power up picked up!");
+            Debug.Log("Health picked up!");
             other.GetComponent<Player>().GainLife();
         }
     }

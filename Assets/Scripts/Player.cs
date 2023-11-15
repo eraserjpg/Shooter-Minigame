@@ -10,17 +10,22 @@ public class Player : MonoBehaviour
     private float horizontalScreenLimit = 10f;
     private float verticalScreenLimit = 4f;
     public int lives;
+    public int shield;
     public TMPro.TextMeshProUGUI livesText;
+    public TMPro.TextMeshProUGUI shieldText;
     public PowerUp_Health powerUp_HealthScript;
-
+    public PowerUp_Shield powerUp_ShieldScript;
 
     // Start is called before the first frame update
     void Start()
     {
         playerSpeed = 6f;
         lives = 3;
+        shield = 0;
         livesText = GameObject.Find("GameManager").GetComponent<GameManager>().livesText;
         livesText.text = "Lives: " + lives;
+        shieldText = GameObject.Find("GameManager").GetComponent<GameManager>().shieldText;
+        shieldText.text = "Shield: " + shield;
     }
 
     // Update is called once per frame
@@ -60,7 +65,7 @@ public class Player : MonoBehaviour
         livesText.text = "Lives: " + lives;
         if (lives >= 3)
         {
-            //keeps lives at 3
+            //keeps live at 3
             lives = 3;
             livesText.text = "Lives: " + lives;
         }
@@ -68,16 +73,44 @@ public class Player : MonoBehaviour
     }
     public void LoseLife()
     {
-        lives--;
-        livesText.text = "Lives: " + lives;
-        //lives -= 1;
-        //lives = lives - 1;
-        if (lives <= 0)
+            lives--;
+            livesText.text = "Lives: " + lives;
+            //lives -= 1;
+            //lives = lives - 1;
+            if (lives == 0)
+            {
+                //Game Over
+                GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+            }
+        
+        }
+        public void GainShield()
+    {
+        shield += 1;
+        shieldText.text = "Shield: " + shield;
+        if (shield >= 3)
         {
-            //Game Over
-            GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            //keep shield at 3
+            shield = 3;
+            shieldText.text = "Shield: " + shield;
+        }
+    }
+    public void LoseShield()
+    {
+        shield--;
+        shieldText.text = "Shield: " + shield;
+        //shield -= 1;
+        //shield = shield - 1
+
+        if (shield <= 0)
+        {
+            LoseLife();
+            //keep shield at 0
+            shield = 0;
+            shieldText.text = "Shield: " + shield;
+            
         }
     }
 }
