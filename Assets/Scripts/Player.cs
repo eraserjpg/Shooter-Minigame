@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private float verticalScreenLimit = 4f;
     public int lives;
     public TMPro.TextMeshProUGUI livesText;
+    public PowerUp_Health powerUp_HealthScript;
 
 
     // Start is called before the first frame update
@@ -53,7 +54,18 @@ public class Player : MonoBehaviour
             Instantiate(bulletPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }
     }
+    public void GainLife()
+    {
+        lives += 1;
+        livesText.text = "Lives: " + lives;
+        if (lives >= 3)
+        {
+            //keeps lives at 3
+            lives = 3;
+            livesText.text = "Lives: " + lives;
+        }
 
+    }
     public void LoseLife()
     {
         lives--;
