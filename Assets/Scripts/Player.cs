@@ -100,17 +100,18 @@ public class Player : MonoBehaviour
     public void LoseShield()
     {
         shield--;
-        shieldText.text = "Shield: " + shield;
         //shield -= 1;
         //shield = shield - 1
-
-        if (shield <= 0)
+        if (shield <= -1)
         {
             LoseLife();
-            //keep shield at 0
             shield = 0;
             shieldText.text = "Shield: " + shield;
-            
         }
+        else
+        {
+            shieldText.text = "Shield: " + shield;
+        }
+
     }
 }
